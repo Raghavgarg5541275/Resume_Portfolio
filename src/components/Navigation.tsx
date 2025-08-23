@@ -11,6 +11,10 @@ const navItems = [
   { label: "Contact", href: "#contact" }
 ];
 
+// --- ADD THIS LINE ---
+// 1. Define your resume URL here for easy updates.
+const resumeUrl = "https://drive.google.com/file/d/1e1KhpUXS7ALfIBsrEebqQ7-W0_BgeLh6/view?usp=drive_link";
+
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -65,7 +69,9 @@ const Navigation = () => {
             <Button 
               size="sm" 
               className="portfolio-button-primary ml-4"
-              onClick={() => window.open("#", "_blank")}
+              // --- UPDATE THIS LINE ---
+              // 2. Use the resumeUrl constant here.
+              onClick={() => window.open(resumeUrl, "_blank")}
             >
               <Download className="mr-2 h-4 w-4" />
               Resume
@@ -105,7 +111,9 @@ const Navigation = () => {
                 <Button 
                   size="sm" 
                   className="portfolio-button-primary flex-1"
-                  onClick={() => window.open("#", "_blank")}
+                  // --- UPDATE THIS LINE ---
+                  // 3. Use the same resumeUrl constant for the mobile button.
+                  onClick={() => window.open(resumeUrl, "_blank")}
                 >
                   <Download className="mr-2 h-4 w-4" />
                   Download Resume
