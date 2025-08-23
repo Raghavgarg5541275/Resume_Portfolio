@@ -1,0 +1,183 @@
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Progress } from "@/components/ui/progress";
+import { Code, Database, Brain, Wrench, Users, Award } from "lucide-react";
+
+const skillCategories = [
+  {
+    title: "Programming Languages",
+    icon: Code,
+    skills: [
+      { name: "Python", level: 90 },
+      { name: "JavaScript", level: 85 },
+      { name: "SQL", level: 88 },
+      { name: "C/C++", level: 80 },
+      { name: "HTML/CSS", level: 92 }
+    ]
+  },
+  {
+    title: "ML/DL & Frameworks",
+    icon: Brain,
+    skills: [
+      { name: "Scikit-learn", level: 88 },
+      { name: "TensorFlow", level: 82 },
+      { name: "Keras", level: 80 },
+      { name: "PyTorch", level: 75 },
+      { name: "XGBoost", level: 85 }
+    ]
+  },
+  {
+    title: "Data Science & Analytics",
+    icon: Database,
+    skills: [
+      { name: "Pandas", level: 90 },
+      { name: "NumPy", level: 88 },
+      { name: "Matplotlib", level: 85 },
+      { name: "Statistical Analysis", level: 83 },
+      { name: "Feature Engineering", level: 87 }
+    ]
+  },
+  {
+    title: "Development Tools",
+    icon: Wrench,
+    skills: [
+      { name: "Git", level: 85 },
+      { name: "MongoDB", level: 82 },
+      { name: "REST APIs", level: 88 },
+      { name: "Three.js", level: 75 },
+      { name: "AWS", level: 70 }
+    ]
+  }
+];
+
+const certifications = [
+  {
+    title: "Machine Learning A-Z",
+    provider: "Udemy",
+    date: "June 2024",
+    icon: Brain
+  },
+  {
+    title: "Data Group - Data Visualisation",
+    provider: "Forage",
+    date: "June 2024",
+    icon: Database
+  },
+  {
+    title: "Algorithmic Toolbox",
+    provider: "University of California, San Diego - Rady School of Management (Coursera)",
+    date: "March 2024",
+    icon: Code
+  }
+];
+
+const leadership = [
+  "Placement Committee President, PlaCom – Bennett University (2024 – 2026)",
+  "Convener, Converge S.O Annual Alumni Meet (March 2025)",
+  "CareerCon Lead, Bennett University (November 2024)",
+  "Vice President, Bennovate – E-Summit of Bennett University (November 2024)",
+  "Joint Secretary, Spark E-Cell – Entrepreneurship Cell (Jan 2024 – Dec 2024)",
+  "Volunteer, Startup MahaKumbh Event (March 2024)"
+];
+
+const Skills = () => {
+  return (
+    <section className="py-20 bg-gradient-subtle">
+      <div className="container mx-auto px-6">
+        <div className="text-center mb-16 section-fade-in">
+          <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+            Skills & <span className="text-gradient">Expertise</span>
+          </h2>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            A comprehensive toolkit spanning artificial intelligence, full-stack development, and data science.
+          </p>
+        </div>
+        
+        {/* Technical Skills */}
+        <div className="grid md:grid-cols-2 gap-8 mb-16 max-w-6xl mx-auto">
+          {skillCategories.map((category, index) => {
+            const IconComponent = category.icon;
+            return (
+              <Card key={index} className="portfolio-card group">
+                <CardHeader className="pb-4">
+                  <div className="flex items-center gap-3">
+                    <div className="p-2 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-all duration-300">
+                      <IconComponent className="h-6 w-6 text-primary" />
+                    </div>
+                    <CardTitle className="text-xl font-bold group-hover:text-gradient transition-all duration-300">
+                      {category.title}
+                    </CardTitle>
+                  </div>
+                </CardHeader>
+                
+                <CardContent className="space-y-4">
+                  {category.skills.map((skill, idx) => (
+                    <div key={idx} className="space-y-2">
+                      <div className="flex justify-between items-center">
+                        <span className="font-medium text-foreground">{skill.name}</span>
+                        <span className="text-sm text-muted-foreground">{skill.level}%</span>
+                      </div>
+                      <Progress value={skill.level} className="h-2" />
+                    </div>
+                  ))}
+                </CardContent>
+              </Card>
+            );
+          })}
+        </div>
+        
+        {/* Certifications */}
+        <div className="mb-16 max-w-4xl mx-auto">
+          <h3 className="text-3xl font-bold mb-8 text-center">
+            <Award className="inline-block mr-3 h-8 w-8 text-primary" />
+            Certifications
+          </h3>
+          <div className="grid md:grid-cols-3 gap-6">
+            {certifications.map((cert, index) => {
+              const IconComponent = cert.icon;
+              return (
+                <Card key={index} className="portfolio-card group text-center">
+                  <CardContent className="pt-6 space-y-4">
+                    <div className="flex justify-center">
+                      <div className="p-3 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-all duration-300">
+                        <IconComponent className="h-8 w-8 text-primary" />
+                      </div>
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-foreground group-hover:text-gradient transition-all duration-300 mb-2">
+                        {cert.title}
+                      </h4>
+                      <p className="text-sm text-muted-foreground">{cert.provider}</p>
+                      <p className="text-xs text-primary font-medium mt-1">{cert.date}</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              );
+            })}
+          </div>
+        </div>
+        
+        {/* Leadership */}
+        <div className="max-w-4xl mx-auto">
+          <h3 className="text-3xl font-bold mb-8 text-center">
+            <Users className="inline-block mr-3 h-8 w-8 text-primary" />
+            Leadership & Responsibilities
+          </h3>
+          <Card className="portfolio-card">
+            <CardContent className="pt-6">
+              <ul className="space-y-4">
+                {leadership.map((role, index) => (
+                  <li key={index} className="flex items-start gap-4 timeline-item">
+                    <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
+                    <span className="text-muted-foreground leading-relaxed">{role}</span>
+                  </li>
+                ))}
+              </ul>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Skills;
