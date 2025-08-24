@@ -6,46 +6,22 @@ const skillCategories = [
   {
     title: "Programming Languages",
     icon: Code,
-    skills: [
-      { name: "Python", level: 90 },
-      { name: "JavaScript", level: 85 },
-      { name: "SQL", level: 88 },
-      { name: "C/C++", level: 80 },
-      { name: "HTML/CSS", level: 92 }
-    ]
+    skills: ["Python", "JavaScript", "SQL", "C/C++", "HTML/CSS"]
   },
   {
     title: "ML/DL & Frameworks",
     icon: Brain,
-    skills: [
-      { name: "Scikit-learn", level: 88 },
-      { name: "TensorFlow", level: 82 },
-      { name: "Keras", level: 80 },
-      { name: "PyTorch", level: 75 },
-      { name: "XGBoost", level: 85 }
-    ]
+    skills: ["Scikit-learn", "TensorFlow", "Keras", "PyTorch", "XGBoost"]
   },
   {
     title: "Data Science & Analytics",
     icon: Database,
-    skills: [
-      { name: "Pandas", level: 90 },
-      { name: "NumPy", level: 88 },
-      { name: "Matplotlib", level: 85 },
-      { name: "Statistical Analysis", level: 83 },
-      { name: "Feature Engineering", level: 87 }
-    ]
+    skills: ["Pandas", "NumPy", "Matplotlib", "Statistical Analysis", "Feature Engineering"]
   },
   {
     title: "Development Tools",
     icon: Wrench,
-    skills: [
-      { name: "Git", level: 85 },
-      { name: "MongoDB", level: 82 },
-      { name: "REST APIs", level: 88 },
-      { name: "Three.js", level: 75 },
-      { name: "AWS", level: 70 }
-    ]
+    skills: ["Git", "MongoDB", "REST APIs", "Three.js", "AWS"]
   }
 ];
 
@@ -115,14 +91,11 @@ const Skills = () => {
                   </div>
                 </CardHeader>
                 
-                <CardContent className="space-y-4">
+                <CardContent className="grid grid-cols-1 gap-3">
                   {category.skills.map((skill, idx) => (
-                    <div key={idx} className="space-y-2">
-                      <div className="flex justify-between items-center">
-                        <span className="font-medium text-foreground">{skill.name}</span>
-                        <span className="text-sm text-muted-foreground">{skill.level}%</span>
-                      </div>
-                      <Progress value={skill.level} className="h-2" />
+                    <div key={idx} className="skill-badge group">
+                      <span className="skill-text">{skill}</span>
+                      <div className="skill-glow"></div>
                     </div>
                   ))}
                 </CardContent>

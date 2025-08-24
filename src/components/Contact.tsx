@@ -1,3 +1,4 @@
+import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -53,6 +54,31 @@ const socialLinks = [
 ];
 
 const Contact = () => {
+  const [result, setResult] = React.useState("");
+
+  const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setResult("Sending....");
+    const formData = new FormData(event.target as HTMLFormElement);
+
+    formData.append("access_key", "6c5cde3f-e0df-44ab-9a99-8cbf3895ea7c");
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      setResult("Form Submitted Successfully");
+      (event.target as HTMLFormElement).reset();
+    } else {
+      console.log("Error", data);
+      setResult(data.message);
+    }
+  };
+
   return (
     <section className="py-20 bg-background">
       <div className="container mx-auto px-6">
@@ -77,8 +103,7 @@ const Contact = () => {
                 </p>
               </div>
               
-              <form action="https://api.web3forms.com/submit" method="POST" className="space-y-6">
-                <input type="hidden" name="access_key" value="0f836cbe-af35-4abe-b4a4-12d232a0071d" />
+              <form onSubmit={onSubmit} className="space-y-6">
                 
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div className="space-y-2">
@@ -136,6 +161,12 @@ const Contact = () => {
                   <Send className="mr-2 h-5 w-5" />
                   Send Message
                 </Button>
+                
+                {result && (
+                  <div className="text-center p-4 rounded-lg bg-primary/10 border border-primary/20">
+                    <span className="text-sm font-medium text-primary">{result}</span>
+                  </div>
+                )}
               </form>
             </CardContent>
           </Card>
