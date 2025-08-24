@@ -78,9 +78,6 @@ const Footer = () => {
             <p className="text-primary-foreground/60 text-sm">
               © {currentYear} Raghav Garg. All rights reserved.
             </p>
-            <p className="text-primary-foreground/60 text-sm flex items-center gap-1">
-              Built with <Heart className="h-4 w-4 text-red-400" /> using React & TypeScript
-            </p>
           </div>
         </div>
       </div>
