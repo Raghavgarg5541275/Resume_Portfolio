@@ -29,25 +29,25 @@ const socialLinks = [
   {
     icon: Github,
     label: "GitHub",
-    href: "#",
+    href: "https://github.com/Raghavgarg5541275",
     description: "View my open source projects"
   },
   {
     icon: Linkedin,
     label: "LinkedIn",
-    href: "#",
+    href: "https://www.linkedin.com/in/raghav-garg-1b8bb0249/",
     description: "Connect with me professionally"
   },
   {
     icon: ExternalLink,
     label: "Portfolio",
-    href: "#",
-    description: "Visit my personal website"
+    href: "https://codolio.com/profile/Raghav554/card",
+    description: "Visit my coding platform"
   },
   {
     icon: ExternalLink,
     label: "LinkTree",
-    href: "#",
+    href: "https://linktr.ee/raghav_garg_ynr",
     description: "All my important links"
   }
 ];
@@ -77,20 +77,26 @@ const Contact = () => {
                 </p>
               </div>
               
-              <form className="space-y-6">
+              <form action="https://api.web3forms.com/submit" method="POST" className="space-y-6">
+                <input type="hidden" name="access_key" value="0f836cbe-af35-4abe-b4a4-12d232a0071d" />
+                
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <label className="text-sm font-medium text-foreground">First Name</label>
                     <Input 
+                      name="first_name"
                       placeholder="John" 
                       className="border-border focus:border-primary transition-colors"
+                      required
                     />
                   </div>
                   <div className="space-y-2">
                     <label className="text-sm font-medium text-foreground">Last Name</label>
                     <Input 
+                      name="last_name"
                       placeholder="Doe" 
                       className="border-border focus:border-primary transition-colors"
+                      required
                     />
                   </div>
                 </div>
@@ -99,28 +105,34 @@ const Contact = () => {
                   <label className="text-sm font-medium text-foreground">Email</label>
                   <Input 
                     type="email" 
+                    name="email"
                     placeholder="john@example.com" 
                     className="border-border focus:border-primary transition-colors"
+                    required
                   />
                 </div>
                 
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-foreground">Subject</label>
                   <Input 
+                    name="subject"
                     placeholder="Project collaboration opportunity" 
                     className="border-border focus:border-primary transition-colors"
+                    required
                   />
                 </div>
                 
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-foreground">Message</label>
                   <Textarea 
+                    name="message"
                     placeholder="Tell me about your project or idea..." 
                     className="min-h-32 border-border focus:border-primary transition-colors resize-none"
+                    required
                   />
                 </div>
                 
-                <Button className="portfolio-button-primary w-full">
+                <Button type="submit" className="portfolio-button-primary w-full">
                   <Send className="mr-2 h-5 w-5" />
                   Send Message
                 </Button>

@@ -17,8 +17,8 @@ const projects = [
       "User-friendly Jupyter interface"
     ],
     date: "Feb 2025",
-    github: "#",
-    demo: "#"
+    github: "https://github.com/Raghavgarg5541275/CrackShield-AI---The-Intelligent-Password-Guardian",
+    demo: "https://github.com/Raghavgarg5541275/CrackShield-AI---The-Intelligent-Password-Guardian"
   },
   {
     title: "Zepto SQL Data Analysis",
@@ -33,8 +33,8 @@ const projects = [
       "Advanced SQL query optimization"
     ],
     date: "May 2024",
-    github: "#",
-    demo: "#"
+    github: "https://github.com/Raghavgarg5541275/zepto-SQL",
+    demo: "https://github.com/Raghavgarg5541275/zepto-SQL"
   },
   {
     title: "WebWave",
@@ -49,8 +49,8 @@ const projects = [
       "Secure payment integration"
     ],
     date: "Aug 2024",
-    github: "#",
-    demo: "#"
+    github: "https://github.com/Raghavgarg5541275/WebWave",
+    demo: "https://github.com/Raghavgarg5541275/WebWave"
   },
   {
     title: "HealthNet",
@@ -65,8 +65,8 @@ const projects = [
       "Comprehensive health analytics"
     ],
     date: "Nov 2024",
-    github: "#",
-    demo: "#"
+    github: "https://github.com/Raghavgarg5541275/HealthNet-predictor",
+    demo: "https://github.com/Raghavgarg5541275/HealthNet-predictor"
   }
 ];
 
@@ -87,17 +87,14 @@ const Projects = () => {
           {projects.map((project, index) => {
             const IconComponent = project.icon;
             return (
-              // The `group` class has been removed from here
-              <Card key={index} className="portfolio-card h-full">
+              <Card key={index} className="portfolio-card group h-full">
                 <CardHeader className="pb-4">
                   <div className="flex items-start gap-4">
-                    {/* The `group-hover:bg-primary/20` class has been removed */}
-                    <div className="p-3 rounded-xl bg-primary/10 transition-all duration-300">
+                    <div className="p-3 rounded-xl bg-primary/10 group-hover:bg-primary/20 transition-all duration-300">
                       <IconComponent className="h-8 w-8 text-primary" />
                     </div>
                     <div className="flex-1">
-                      {/* The `group-hover:text-gradient` class has been removed */}
-                      <CardTitle className="text-xl font-bold text-foreground transition-all duration-300">
+                      <CardTitle className="text-xl font-bold text-foreground group-hover:text-gradient transition-all duration-300">
                         {project.title}
                       </CardTitle>
                       <p className="text-sm text-primary font-medium mt-1">{project.subtitle}</p>
@@ -135,14 +132,18 @@ const Projects = () => {
                     </div>
                     
                     <div className="flex gap-3 pt-4">
-                      <Button size="sm" className="portfolio-button-primary text-sm">
-                        <Github className="mr-2 h-4 w-4" />
-                        Code
-                      </Button>
-                      <Button size="sm" variant="outline" className="portfolio-button-secondary text-sm">
-                        <ExternalLink className="mr-2 h-4 w-4" />
-                        Demo
-                      </Button>
+                      <a href={project.github} target="_blank" rel="noopener noreferrer">
+                        <Button size="sm" className="portfolio-button-primary text-sm">
+                          <Github className="mr-2 h-4 w-4" />
+                          Code
+                        </Button>
+                      </a>
+                      <a href={project.demo} target="_blank" rel="noopener noreferrer">
+                        <Button size="sm" variant="outline" className="portfolio-button-secondary text-sm">
+                          <ExternalLink className="mr-2 h-4 w-4" />
+                          Demo
+                        </Button>
+                      </a>
                     </div>
                   </div>
                 </CardContent>

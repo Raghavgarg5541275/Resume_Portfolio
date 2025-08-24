@@ -13,7 +13,8 @@ const experiences = [
       "Automated defect detection system, reducing manual checks by 20%",
       "Researched algorithms to enable predictive maintenance"
     ],
-    skills: ["Python", "Scikit-learn", "Pandas", "OpenCV", "TensorFlow"]
+    skills: ["Python", "Scikit-learn", "Pandas", "OpenCV", "TensorFlow"],
+    certificate: "https://www.linkedin.com/posts/raghav-garg-1b8bb0249_ukb-electronics-certificate-of-internship-activity-7218615813543510016-sN42/?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAD2UUBwB9NQZ-ZX_tMDzinsz94RePpycPmA"
   },
   {
     title: "Virtual Intern",
@@ -24,7 +25,8 @@ const experiences = [
       "Designed and debugged network setups to simulate real-world cases",
       "Applied security best practices to identify threats"
     ],
-    skills: ["Cisco Packet Tracer", "Networking Tools", "Network Security", "Troubleshooting"]
+    skills: ["Cisco Packet Tracer", "Networking Tools", "Network Security", "Troubleshooting"],
+    certificate: "https://www.linkedin.com/posts/raghav-garg-1b8bb0249_virtual-internship-program-activity-7248411907768909824-3q4b/?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAD2UUBwB9NQZ-ZX_tMDzinsz94RePpycPmA"
   },
   {
     title: "SDE Intern",
@@ -36,7 +38,8 @@ const experiences = [
       "Integrated backend APIs for faster data loading",
       "Collaborated across teams to optimize front-end performance"
     ],
-    skills: ["HTML", "CSS", "JavaScript", "Three.js", "MongoDB", "Node.js", "Express.js", "Git", "Agile"]
+    skills: ["HTML", "CSS", "JavaScript", "Three.js", "MongoDB", "Node.js", "Express.js", "Git", "Agile"],
+    certificate: "https://www.linkedin.com/posts/raghav-garg-1b8bb0249_metabees-intern-activity-7206513048793083904-s2wA/?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAD2UUBwB9NQZ-ZX_tMDzinsz94RePpycPmA"
   }
 ];
 
@@ -63,6 +66,16 @@ const Experience = () => {
                       {exp.title}
                     </CardTitle>
                     <p className="text-lg font-semibold text-primary mt-1">{exp.company}</p>
+                    {exp.certificate && (
+                      <a 
+                        href={exp.certificate} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-sm text-primary hover:text-primary/80 transition-colors underline"
+                      >
+                        View Certificate
+                      </a>
+                    )}
                   </div>
                   <div className="flex flex-col lg:text-right gap-2">
                     <div className="flex items-center gap-2 text-muted-foreground">

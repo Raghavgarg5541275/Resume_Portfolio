@@ -30,16 +30,16 @@ const Hero = () => {
           <div className="text-center lg:text-left lg:order-1 section-fade-in">
             <div className="space-y-6">
               <div className="space-y-4">
-                <h1 className="text-5xl lg:text-7xl font-bold tracking-tight hyperlink-element">
+                <h1 className="text-5xl lg:text-7xl font-bold tracking-tight">
                   <span className="block text-foreground">RAGHAV</span>
                   <span className="block text-gradient-neon animate-pulse-neon">GARG</span>
                 </h1>
-                <p className="text-xl lg:text-2xl text-muted-foreground font-light hyperlink-element">
+                <p className="text-xl lg:text-2xl text-muted-foreground font-light">
                   AI Engineer & Full-Stack Developer
                 </p>
               </div>
               
-              <p className="text-lg text-muted-foreground max-w-xl leading-relaxed hyperlink-element">
+              <p className="text-lg text-muted-foreground max-w-xl leading-relaxed">
                 Self-motivated CSE student specializing in Artificial Intelligence with a strong foundation in Python, 
                 machine learning, and full-stack development. Passionate about translating business needs into 
                 innovative technical solutions.
@@ -66,7 +66,7 @@ const Hero = () => {
                   <Mail className="h-5 w-5" />
                 </a>
                 <a 
-                  href="https://linkedin.com" 
+                  href="https://www.linkedin.com/in/raghav-garg-1b8bb0249/" 
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-3 rounded-full bg-card border border-border hover:bg-accent transition-all duration-300 hover:scale-110 shadow-portfolio-soft hover:shadow-portfolio-neon hyperlink-element"
@@ -74,7 +74,7 @@ const Hero = () => {
                   <Linkedin className="h-5 w-5" />
                 </a>
                 <a 
-                  href="https://github.com" 
+                  href="https://github.com/Raghavgarg5541275" 
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-3 rounded-full bg-card border border-border hover:bg-accent transition-all duration-300 hover:scale-110 shadow-portfolio-soft hover:shadow-portfolio-neon hyperlink-element"

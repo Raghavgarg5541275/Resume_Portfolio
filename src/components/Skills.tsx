@@ -54,29 +54,35 @@ const certifications = [
     title: "Machine Learning A-Z",
     provider: "Udemy",
     date: "June 2024",
-    icon: Brain
+    icon: Brain,
+    link: "https://udemy-certificate.s3.amazonaws.com/pdf/UC-774f9734-f62a-43c9-b42e-22a19724bd61.pdf"
   },
   {
     title: "Data Group - Data Visualisation",
     provider: "Forage",
     date: "June 2024",
-    icon: Database
+    icon: Database,
+    link: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/Tata/MyXvBcppsW2FkNYCX_Tata%20Group_GqMKmiHW9dyy5kXco_1719342194737_completion_certificate.pdf"
   },
   {
     title: "Algorithmic Toolbox",
     provider: "University of California, San Diego - Rady School of Management (Coursera)",
     date: "March 2024",
-    icon: Code
+    icon: Code,
+    link: "https://www.coursera.org/account/accomplishments/verify/VC53NDFC9J3L"
   }
 ];
 
 const leadership = [
-  "Placement Committee President, PlaCom – Bennett University (2024 – 2026)",
-  "Convener, Converge S.O Annual Alumni Meet (March 2025)",
-  "CareerCon Lead, Bennett University (November 2024)",
-  "Vice President, Bennovate – E-Summit of Bennett University (November 2024)",
-  "Joint Secretary, Spark E-Cell – Entrepreneurship Cell (Jan 2024 – Dec 2024)",
-  "Volunteer, Startup MahaKumbh Event (March 2024)"
+  {
+    title: "Placement Committee President, PlaCom – Bennett University (2024 – 2026)",
+    link: "https://www.linkedin.com/posts/raghav-garg-1b8bb0249_placom-placementcommittee-leadership-activity-7312126387417452544-NqjT/?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAD2UUBwB9NQZ-ZX_tMDzinsz94RePpycPmA"
+  },
+  { title: "Convener, Converge S.O Annual Alumni Meet (March 2025)" },
+  { title: "CareerCon Lead, Bennett University (November 2024)" },
+  { title: "Vice President, Bennovate – E-Summit of Bennett University (November 2024)" },
+  { title: "Joint Secretary, Spark E-Cell – Entrepreneurship Cell (Jan 2024 – Dec 2024)" },
+  { title: "Volunteer, Startup MahaKumbh Event (March 2024)" }
 ];
 
 const Skills = () => {
@@ -148,6 +154,16 @@ const Skills = () => {
                       </h4>
                       <p className="text-sm text-muted-foreground">{cert.provider}</p>
                       <p className="text-xs text-primary font-medium mt-1">{cert.date}</p>
+                      {cert.link && (
+                        <a 
+                          href={cert.link} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="inline-block mt-2 text-xs text-primary hover:text-primary/80 transition-colors underline"
+                        >
+                          View Certificate
+                        </a>
+                      )}
                     </div>
                   </CardContent>
                 </Card>
@@ -168,7 +184,19 @@ const Skills = () => {
                 {leadership.map((role, index) => (
                   <li key={index} className="flex items-start gap-4 timeline-item">
                     <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
-                    <span className="text-muted-foreground leading-relaxed">{role}</span>
+                    <div className="flex-1">
+                      <span className="text-muted-foreground leading-relaxed">{role.title}</span>
+                      {role.link && (
+                        <a 
+                          href={role.link} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="ml-3 text-sm text-primary hover:text-primary/80 transition-colors underline"
+                        >
+                          View Post
+                        </a>
+                      )}
+                    </div>
                   </li>
                 ))}
               </ul>
